@@ -1,15 +1,24 @@
 const DOMSelectors =  {
-    button: document.getElementsByClassName("btn"),
+    submit: document.getElementById("btn"),
     title: document.getElementById("title"),
-    box : document.getElementsByClassName("text-box"),
-    input: document.querySelector(`#input`)
+    input: document.querySelector("form-input"),
+  text: document.querySelector("text"),
+  display: document.querySelectorAll("display"),
+  artist: document.getElementById("artist"),
+  url:document.getElementById("url"),
 
 };
-console.log(DOMSelectors);
+console.log(DOMSelectors.submit);
 
 
 
-DOMSelectors.button.addEventListener("click", function (){
+DOMSelectors.submit.addEventListener("submit", function (){
   let input = DOMSelectors.input.value;
-  console.log(input);
+  let title = DOMSelectors.title.value;
+  let artist = DOMSelectors.artist.value;
+  let url = DOMSelectors.url.value;
+  DOMSelectors.box.insertAdjacentHTML(
+    "afterend"
+    `<p> ${title} ${artist} ${url}</p>`
+  );
 });
