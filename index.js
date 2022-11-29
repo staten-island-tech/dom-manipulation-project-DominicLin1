@@ -7,7 +7,7 @@ const DOMSelectors =  {
   url:document.getElementById("url"),
   form:document.getElementById("form"),
 box: document.getElementById("box"),
-byebye: document.getElementsById("remove btn")
+byebye: document.getElementById("remove btn")
 
 };
 
@@ -27,18 +27,19 @@ DOMSelectors.form.addEventListener("submit", function (event){
 console.log(`${title} ${artist} ${url}`)
 event.preventDefault();
 
-});*/
-
+});
+ */
 
 DOMSelectors.form.addEventListener("submit",
 function bigC(event){
-  insertHTML();
-
   event.preventDefault();
+  makecard();
+
+  
  
 })
       
-        function insertHTML(){
+        function makecard(){
           const card = {
             title: DOMSelectors.title.value,
        artist: DOMSelectors.artist.value,
