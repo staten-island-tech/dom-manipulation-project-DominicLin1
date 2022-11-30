@@ -7,7 +7,7 @@ const DOMSelectors =  {
   url:document.getElementById("url"),
   form:document.getElementById("form"),
 box: document.getElementById("box"),
-byebye: document.getElementById("remove btn")
+byebye: document.querySelectorAll(`#remove btn`)
 
 };
 
@@ -33,11 +33,17 @@ event.preventDefault();
 DOMSelectors.form.addEventListener("submit",
 function bigC(event){
   event.preventDefault();
-  makecard();
+  insert();
 
   
  
 })
+function insert(){
+  let title = DOMSelectors.title.value;
+  let artist = DOMSelectors.artist.value;
+  let url = DOMSelectors.url.value;
+  makecard()
+}
       
         function makecard(){
           const card = {
@@ -58,3 +64,14 @@ function bigC(event){
         }
 
       
+        DOMSelectors.byebye.addEventListener("click",
+        function bye(event){
+        remove()
+     event.preventDefault
+        })
+        function remove(){
+          DOMSelectors.title.value= "";
+          DOMSelectors.artist.value= "";
+          DOMSelectors.url.value= "";
+      
+        } 
