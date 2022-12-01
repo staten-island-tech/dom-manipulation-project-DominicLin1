@@ -7,28 +7,10 @@ const DOMSelectors =  {
   url:document.getElementById("url"),
   form:document.getElementById("form"),
 box: document.getElementById("box"),
-byebye: document.querySelectorAll(`#remove btn`)
+byebye: document.getElementById("remove btn")
 
 };
 
-
-/* 
-DOMSelectors.form.addEventListener("submit", function (event){
-  
-  let title = DOMSelectors.title.value;
-  let artist = DOMSelectors.artist.value;
-  let url = DOMSelectors.url.value;
-  DOMSelectors.form.insertAdjacentHTML(
-    "afterend",
-   `<p> ${title} ${artist} ${url} </p>`
-  );
-
- 
-console.log(`${title} ${artist} ${url}`)
-event.preventDefault();
-
-});
- */
 
 DOMSelectors.form.addEventListener("submit",
 function bigC(event){
@@ -59,15 +41,19 @@ function insert(){
               <h2 class="display-artist" id= "display-artist">${card.artist}</h2>
               <h3 class="display-album" id="display-album">${card.title}</h3>
               <h3 class="display-url" id="display-url">${card.url}</h3>
-               <button id="remove btn">Remove Album</button>
+               
           </div>`)
         }
 
-      
-        DOMSelectors.byebye.addEventListener("click",
+let button = document.getElementById("remove btn")
+        button.addEventListener("click",
         function bye(event){
         remove()
+        const element= document.getElementById("display-card");
+        button.closest("div").remove();
+
      event.preventDefault
+    
         })
         function remove(){
           DOMSelectors.title.value= "";
